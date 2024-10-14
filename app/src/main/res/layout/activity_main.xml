@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nature_background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:padding="50dp"
+            android:gravity="center"
+            android:src="@drawable/user_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_header"
+            android:text="Welcome to Sagada Gate"
+            android:layout_below="@id/logo"
+            android:layout_marginBottom="90dp"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_btn"
+            android:text="Login"
+            android:layout_below="@id/main_header"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup_btn"
+            android:text="Sign up"
+            android:layout_below="@id/login_btn"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/loginwith"
+            android:text="Login with"
+            android:layout_below="@id/signup_btn"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

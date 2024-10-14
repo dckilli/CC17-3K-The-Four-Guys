@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners
+        android:radius="26dp" /> <!-- Adjust the radius for more or less curvature -->
+    <solid android:color="#301DE9B6" /> <!-- Background color -->
+
+</shape>
