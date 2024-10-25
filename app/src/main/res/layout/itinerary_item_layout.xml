@@ -1,0 +1,99 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:data="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="itinerary"
+            type="Itinerary" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <!-- Title Row -->
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Itinerary Title"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+            </TableRow>
+
+            <!-- Duration Row -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Duration of Stay"
+                    android:textSize="18sp"
+                    android:paddingBottom="16dp" />
+            </TableRow>
+
+            <!-- Daily Itinerary Header -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Date"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Time"
+                    android:textStyle="bold"
+                    android:paddingStart="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Activity"
+                    android:textStyle="bold"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Place"
+                    android:textStyle="bold"
+                    android:paddingStart="16dp" />
+            </TableRow>
+
+            <!-- Daily Itinerary Rows -->
+            <data:List
+                android:items="itinerary.dailyItinerary"
+                android:binding="day">
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="date" />
+                    <data:List
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:items="activities"
+                        android:binding="activity">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="time" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="description" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="place" />
+                    </data:List>
+                </TableRow>
+            </data:List>
+        </TableLayout>
+    </ScrollView>
+</layout>
