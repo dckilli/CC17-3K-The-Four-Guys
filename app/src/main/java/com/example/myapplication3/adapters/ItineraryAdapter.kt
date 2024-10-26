@@ -32,6 +32,7 @@ abstract class ItineraryAdapter(private val items: MutableList<Any>) : RecyclerV
         fun bind(item: ItineraryItem) {
             binding.itemDay.text = item.day
             binding.itemTime.text = item.time
+            binding.itemActivity.text = item.activity
             binding.itemPlace.text = item.place
         }
     }
