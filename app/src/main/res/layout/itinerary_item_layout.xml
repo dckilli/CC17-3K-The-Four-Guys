@@ -4,7 +4,7 @@
     <data>
         <variable
             name="itinerary"
-            type="Itinerary" />
+            type="com.example.myapplication3.models.Itinerary" />
     </data>
 
     <ScrollView
