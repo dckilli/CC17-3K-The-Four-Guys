@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication3.adapters.ItineraryAdapter
 import com.example.myapplication3.models.*
-import com.example.myapplication3.R
+import com.example.myapplication3.adapters.ConcreteItineraryAdapter
 
-class MainActivity_ItineraryPlanner : AppCompatActivity() {
+class ItineraryPlanner : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItineraryAdapter
@@ -22,7 +22,7 @@ class MainActivity_ItineraryPlanner : AppCompatActivity() {
         setContentView(R.layout.itinerary_activity_main)
 
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = ItineraryAdapter(itineraryItems)
+        adapter = ConcreteItineraryAdapter(itineraryItems)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
