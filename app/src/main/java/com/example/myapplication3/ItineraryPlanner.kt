@@ -1,72 +1,72 @@
 package com.example.myapplication3
 
-
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication3.adapters.ItineraryAdapter
-import com.example.myapplication3.models.*
-import com.example.myapplication3.adapters.ConcreteItineraryAdapter
+import com.example.myapplication3.adapters.ActivityAdapter
+import com.example.myapplication3.models.Activity
 
 class ItineraryPlanner : AppCompatActivity() {
 
+    private lateinit var etTitle: EditText
+    private lateinit var etDuration: EditText
+    private lateinit var etDay: EditText
+    private lateinit var etTime: EditText
+    private lateinit var etActivityDescription: EditText
+    private lateinit var btnAddActivity: Button
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: ItineraryAdapter
-    private val itineraryItems = mutableListOf<Any>()
+    private lateinit var activityAdapter: ActivityAdapter
+    private val activities = mutableListOf<Activity>()
 
-
+    @SuppressLint("NotifyDataSetChanged", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.itinerary_activity_main)
+        setContentView(R.layout.activity_main)
 
+        etTitle = findViewById(R.id.etTitle)
+        etDuration = findViewById(R.id.etDuration)
+        etDay = findViewById(R.id.etDay)
+        etTime = findViewById(R.id.etTime)
+        etActivityDescription = findViewById(R.id.etActivityDescription)
+        btnAddActivity = findViewById(R.id.btnAddActivity)
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = ConcreteItineraryAdapter(itineraryItems)
-        recyclerView.adapter = adapter
+
+        // Set up the RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
+        activityAdapter = ActivityAdapter(activities) { activity ->
+            // Remove the selected activity
+            activities.remove(activity)
+            activityAdapter.notifyDataSetChanged()
+        }
+        recyclerView.adapter = activityAdapter
 
-        // Add initial items
-        itineraryItems.addAll(
-            listOf(
-                TouristSpot("Bokong Falls", "A beautiful waterfall perfect for a dip."),
-                TouristSpot("Sumaguing Cave", "A popular cave for spelunking."),
-                TouristSpot("Echo Valley", "Famous for its stunning views and echoes."),
-                Restaurant("Log Cabin", "American"),
-                Restaurant("Taste of Sagada", "Local Cuisine"),
-                Restaurant("Bana's Café", "International"),
-                Accommodation("The Homestay", "Guesthouse"),
-                Accommodation("Sagbayan Mountain Resort", "Resort"),
-                Accommodation("Ganduyan Inn", "Inn")
-            )
-        )
-        adapter.notifyDataSetChanged()
-
-        // Set up drag and drop
-        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.UP or ItemTouchHelper.DOWN) {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean {
-                val fromPosition = viewHolder.adapterPosition
-                val toPosition = target.adapterPosition
-                itineraryItems.swap(fromPosition, toPosition)
-                adapter.notifyItemMoved(fromPosition, toPosition)
-                return true
-            }
-
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                // No swipe actions needed
-            }
-        })
-
-        itemTouchHelper.attachToRecyclerView(recyclerView)
+        // Add new activity on button click
+        btnAddActivity.setOnClickListener {
+            addActivity()
+        }
     }
 
-    private fun MutableList<Any>.swap(fromPosition: Int, toPosition: Int) {
-        val temp = this[fromPosition]
-        this[fromPosition] = this[toPosition]
-        this[toPosition] = temp
+    @SuppressLint("NotifyDataSetChanged")
+    private fun addActivity() {
+        // Get input values and validate
+        val day = etDay.text.toString().toIntOrNull()
+        val time = etTime.text.toString()
+        val description = etActivityDescription.text.toString()
+
+        if (day != null && time.isNotBlank() && description.isNotBlank()) {
+            // Create a new Activity instance and add it to the list
+            val activity = Activity(day, time, description)
+            activities.add(activity)
+            activityAdapter.notifyDataSetChanged()  // Refresh the RecyclerView
+
+            // Clear inputs for the next entry
+            etDay.text.clear()
+            etTime.text.clear()
+            etActivityDescription.text.clear()
+        }
     }
 }
