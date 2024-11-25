@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.myapplication3.models.User
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth

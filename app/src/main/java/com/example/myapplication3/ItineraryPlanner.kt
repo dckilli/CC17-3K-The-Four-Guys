@@ -25,7 +25,7 @@ class ItineraryPlanner : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.itinerary_activity_main)
 
         etTitle = findViewById(R.id.etTitle)
         etDuration = findViewById(R.id.etDuration)

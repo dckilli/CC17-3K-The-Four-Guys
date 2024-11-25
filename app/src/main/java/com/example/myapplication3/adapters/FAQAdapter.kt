@@ -9,7 +9,6 @@ import com.example.myapplication3.MainActivityFAQs
 import com.example.myapplication3.R
 
 
-
 class FAQAdapter(private val faqs: List<MainActivityFAQs.FAQ>) : RecyclerView.Adapter<FAQAdapter.FAQViewHolder>() {
 
     class FAQViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

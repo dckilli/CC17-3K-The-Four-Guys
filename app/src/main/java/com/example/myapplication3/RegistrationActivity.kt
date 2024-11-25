@@ -6,9 +6,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 
-
-
-
 class RegistrationActivity : AppCompatActivity() {
 
     private lateinit var etName: EditText

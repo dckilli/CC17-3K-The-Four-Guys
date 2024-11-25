@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication3.R
 import com.example.myapplication3.models.Activity
+import com.example.myapplication3.R
 
 class ActivityAdapter(
     private val activities: MutableList<Activity>,
@@ -30,7 +30,7 @@ class ActivityAdapter(
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ActivityViewHolder, position: Int) {
         val activity = activities[position]
-        holder.tvDay.text = activity.day.toString()
+        activity.day.toString().also { holder.tvDay.text = it }
         holder.tvTime.text = activity.time
         holder.tvDescription.text = activity.description
 
