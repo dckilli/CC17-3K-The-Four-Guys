@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nature_background"
+    android:padding="20dp"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_header"
+        android:text="Profile"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/useNameTextView"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_edittext"
+        android:text="Userame"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEmailTextView"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_edittext"
+        android:text="Email" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userContactTextView"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_edittext"
+        android:text="Contact Number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userGenderTextView"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_edittext"
+        android:text="Gender"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userDOBTextView"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_edittext"
+        android:text="Date of Birth"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editProfileBtn"
+        android:text="Edit Profile"
+        android:layout_below="@id/dobEditText"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:padding="10dp"
+        android:background="@drawable/rounded_button"
+        />
+
+</LinearLayout>

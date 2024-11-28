@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity"
+    android:background="@drawable/nature_background"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup_header"
+            android:text="Sign UP for an account now!"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/su_username"
+            android:hint="Username"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/signup_header"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:hint="Email"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/su_username"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dob"
+            android:hint="Date of Birth"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/email"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:focusable="false"
+            android:clickable="true"
+            />
+
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/dob"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Male"
+                android:textColor="@color/white"
+                />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Female"
+                android:textColor="@color/white"
+                />
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact"
+            android:hint="Contact no."
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/gender"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:inputType="phone"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/su_password"
+            android:hint="Password"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/contact"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirm_password"
+            android:hint="Confirm Password"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/su_password"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_btn"
+            android:text="Register"
+            android:layout_below="@id/confirm_password"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:padding="10dp"
+            android:background="@drawable/rounded_button"
+            />
+        
+    </RelativeLayout>    
+
+
+
+</ScrollView>
